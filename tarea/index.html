@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis Notas</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <main class="tarjeta">
+    <h1>Mis Notas</h1>
+    <p class="ayuda">Organiza tus ideas de forma rápida.</p>
+
+    <div class="formulario-nota">
+      <label for="nota-input">Nueva nota</label>
+      <div class="input-grupo">
+        <input id="nota-input" type="text" placeholder="Escribe una tarea..." autocomplete="off">
+        <button id="agregar-btn" class="boton-principal">Agregar</button>
+      </div>
+    </div>
+
+    <p id="mensaje" class="mensaje" role="status"></p>
+
+    <div id="lista-notas" class="lista-notas"></div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

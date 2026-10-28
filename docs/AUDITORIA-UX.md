@@ -1,25 +1,18 @@
-# Auditoría UX: Formulario de Inscripción
+# Auditoría UX: App de Notas (Laboratorio 05)
 
 ## 1. Tabla de Heurísticas de Nielsen
 
 | Heurística | Problema original | Solución aplicada | Gravedad original |
 | :--- | :--- | :--- | :--- |
-| **Visibilidad del estado** | Al pulsar «ok» no aparecía ningún mensaje, el usuario no sabía si se había inscrito. | Se agregó un mensaje dinámico con `role="status"` que indica "Enviando...", error o éxito. | Alta |
-| **Coincidencia con el mundo real** | El botón decía «ok» y el texto decía «procesar la solicitud». | Se cambió a «Inscribirme» y textos amigables como «Inscríbete al taller». | Media |
-| **Control y libertad** | El enlace «BORRAR TODO» borraba todo sin confirmación. | Se cambió por un botón «Limpiar formulario» con ventana de confirmación (`confirm()`). | Alta |
-| **Prevención de errores** | No validaba el correo ni campos vacíos. | Se agregó `required`, `type="email"` y validación con `checkValidity()`. | Alta |
-| **Reconocer, no recordar** | Solo había placeholders que desaparecían al escribir. | Se agregaron etiquetas `<label>` visibles y asociadas con `for` e `id`. | Alta |
-| **Accesibilidad** | Sin etiquetas, sin foco visible, bajo contraste. | Se agregó `:focus-visible`, contraste 4.5:1, `alt` en imágenes y tamaño táctil de 44px. | Alta |
+| **Visibilidad del estado** | Al agregar una nota, no aparece ningún mensaje de confirmación. | Se agregó un mensaje dinámico "Nota agregada" que desaparece a los 2 segundos. | Alta |
+| **Coincidencia con el mundo real** | El botón decía "Add" en inglés y no había un título claro. | Se cambió a "Agregar nota" y se puso un `<h1>` descriptivo. | Media |
+| **Control y libertad** | El botón de eliminar (X) borraba la nota inmediatamente. | Se agregó una confirmación (`confirm()`) antes de borrar. | Alta |
+| **Prevención de errores** | Se podía agregar una nota vacía. | Se deshabilitó el botón de agregar si el campo está vacío y se agregó un mensaje de error. | Alta |
+| **Reconocer, no recordar** | Solo había placeholder en el campo de texto. | Se agregó un `<label>` visible asociado al campo. | Alta |
+| **Accesibilidad** | Sin contraste, sin foco visible, botones muy pequeños. | Se aplicaron variables de color, `:focus-visible` y tamaño de 44px en botones. | Alta |
 
 ## 2. Aplicación de Leyes de UX
 
-*   **Ley de Fitts:** Se hizo el botón principal «Inscribirme» mucho más grande (`flex: 1`) y se separó 24px del botón secundario para evitar clics accidentales.
-*   **Ley de Hick:** La lista de 12 talleres se agrupó en 3 categorías con `<optgroup>` (Control de versiones, Desarrollo web, Diseño y calidad) para reducir el tiempo de decisión.
-*   **Ley de Miller:** El formulario se dividió en dos bloques numerados (`<fieldset>` con `<legend>`: "1. Tus datos" y "2. Tu taller") para no saturar la memoria visual.
-
-## 3. Capturas del Antes y Después
-
-*(Aquí debes insertar tus capturas en el archivo Markdown cuando lo subas a GitHub, o simplemente mencionarlas en tu informe de Word).*
-
-*   **Antes:** Formulario gris, letras minúsculas, botón "ok" diminuto.
-*   **Después:** Tarjeta blanca, tipografía legible, botón azul grande, foco naranja visible.
+*   **Ley de Fitts:** El botón "Agregar nota" ahora ocupa todo el ancho disponible (`width: 100%`) y es más alto (44px) para ser más fácil de pulsar.
+*   **Ley de Hick:** En este caso no hay muchas opciones en una lista, pero se mejoró la jerarquía visual agrupando el input y el botón en un bloque claro de "Nueva nota", y la lista de notas en otro bloque, reduciendo la carga cognitiva.
+*   **Ley de Miller:** Se dividió la pantalla en dos secciones claras: el formulario para agregar (2 elementos) y la lista de notas, para que el usuario no se sienta abrumado por los elementos.
