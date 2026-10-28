@@ -14,3 +14,6 @@ Página publicada: https://ghost123-GLITCH.github.io/taller-ux/
 | Ley de Fitts | Botón principal grande y separado de Limpiar |
 | Ley de Hick | Talleres agrupados por categoría |
 | Accesibilidad | Labels, texto alternativo, contraste y foco visible |
+
+## Tarea
+- Se agregó la app-notas rediseñada en la carpeta `tarea/`.
